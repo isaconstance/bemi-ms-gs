@@ -154,6 +154,32 @@ public class AlertaService {
         return new AlertaResponseDTO(alertaRepository.save(alerta));
     }
 
+    @Transactional
+    public AlertaResponseDTO createPendente(AlertaRequestDTO dto) {
+
+        Alerta alerta = new Alerta();
+        alerta.setIdosoId(dto.getIdosoId());
+        alerta.setTipo(dto.getTipo());
+        alerta.setGravidade(dto.getGravidade());
+        alerta.setOrigem(dto.getOrigem());
+        alerta.setMensagem(dto.getMensagem());
+        alerta.setDataCriacao(LocalDateTime.now());
+        alerta.setStatus(StatusAlerta.ABERTO);
+        alerta.setStatusSincronizado(false);
+
+        return new AlertaResponseDTO(alertaRepository.save(alerta));
+    }
+
+    @Transactional
+    public AlertaResponseDTO resolverPendente(Long id) {
+
+        Alerta alerta = findAlertaById(id);
+        alerta.setStatus(StatusAlerta.RESOLVIDO);
+        alerta.setStatusSincronizado(false);
+
+        return new AlertaResponseDTO(alertaRepository.save(alerta));
+    }
+
     private Alerta findAlertaById(Long id) {
         return alertaRepository.findById(id)
                 .orElseThrow(() ->
