@@ -186,8 +186,5 @@ docker compose -f mysql_846/docker-compose.yml down
 
 Esse comando encerra e remove o container do MySQL, preservando os dados armazenados no volume configurado.
 
-## 10. Repositório
-
-Código-fonte e arquivos do projeto:
-
-https://github.com/isaconstance/bemi-ms-gs
+## 10. Link do Pitch
+https://drive.google.com/drive/folders/10cydE1Pr29piTpBhmMKePHgN6MqBHeef?usp=drive_link
