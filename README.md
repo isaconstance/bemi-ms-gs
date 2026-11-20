@@ -187,4 +187,5 @@ docker compose -f mysql_846/docker-compose.yml down
 Esse comando encerra e remove o container do MySQL, preservando os dados armazenados no volume configurado.
 
 ## 10. Link do Pitch
+https://youtu.be/520n4oWPWS0?si=yV1S8eoHzk_-RRrs
 https://drive.google.com/drive/folders/10cydE1Pr29piTpBhmMKePHgN6MqBHeef?usp=drive_link
